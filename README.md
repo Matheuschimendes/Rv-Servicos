@@ -1,21 +1,38 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
-
-# Run and deploy your AI Studio app
-
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/drive/1kKrS8rMthzWWBbmcnpfTh7jd9XaJzlch
-
-## Run Locally
-
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
 # Rv-Servicos
+
+## Preview do site
+
+![Preview do site](assets/images/site-preview.png)
+
+## Requisitos
+
+- Node.js (recomendado 18+)
+- npm ou pnpm
+
+## Como rodar localmente
+
+1. Instale as dependencias:
+   `npm install`
+2. Configure a chave da API do Gemini em `.env.local`:
+   `GEMINI_API_KEY=seu_token_aqui`
+3. Inicie o servidor de desenvolvimento:
+   `npm run dev`
+
+## Scripts
+
+- `npm run dev` inicia o ambiente de desenvolvimento
+- `npm run build` gera o build de producao
+- `npm run preview` visualiza o build localmente
+
+## Estrutura basica
+
+- `App.tsx` componente principal
+- `components/` componentes reutilizaveis
+- `assets/` recursos estaticos
+- `index.css` estilos globais
+- `vite.config.ts` configuracao do Vite
+
+## Deploy
+
+Se voce ja tem o app publicado no AI Studio, use o link acima para visualizar a versao hospedada.
+Para publicar fora do AI Studio, gere o build (`npm run build`) e hospede o conteudo da pasta `dist/`.
