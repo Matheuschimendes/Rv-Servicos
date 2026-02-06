@@ -1,0 +1,57 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  scroll-padding-top: 80px;
+  scroll-behavior: smooth;
+}
+body {
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+  -webkit-tap-highlight-color: transparent;
+}
+.glass {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 85, 150, 0.1);
+}
+.hero-gradient {
+  background: linear-gradient(135deg, #005596 0%, #003a66 100%);
+}
+.text-balance {
+  text-wrap: balance;
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+/* Helpers de padronização */
+.section-spacing {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+@media (min-width: 768px) {
+  .section-spacing {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+@font-face {
+  font-family: "ITCAvantGardePro-Md";
+  src: url("./assets/fonts/ITCAvantGardePro-Md.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}

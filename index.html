@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>RV Serviços Médicos - Eficiência e Humanização na Saúde</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                dark: "#005596",
+                light: "#00B0FC",
+                surface: "#F8FAFC",
+                accent: "#00B0FC",
+              },
+            },
+            spacing: {
+              "section-py": "6rem", // 96px (Mobile)
+              "section-py-md": "8rem", // 128px (Desktop)
+              "header-mb": "4rem", // 64px
+              "header-mb-md": "5rem", // 80px
+            },
+            fontFamily: {
+              sans: ["ITCAvantGardePro-Md", "sans-serif"],
+              display: ["ITCAvantGardePro-Md", "sans-serif"],
+            },
+            borderRadius: {
+              premium: "1.5rem",
+              card: "2rem",
+            },
+          },
+        },
+      };
+    </script>
+    <style></style>
+    <script type="importmap">
+      {
+        "imports": {
+          "react/": "https://esm.sh/react@^19.2.4/",
+          "react": "https://esm.sh/react@^19.2.4",
+          "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body class="text-slate-800 font-sans overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
