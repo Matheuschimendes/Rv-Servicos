@@ -31,8 +31,3 @@
 - `assets/` recursos estaticos
 - `index.css` estilos globais
 - `vite.config.ts` configuracao do Vite
-
-## Deploy
-
-Se voce ja tem o app publicado no AI Studio, use o link acima para visualizar a versao hospedada.
-Para publicar fora do AI Studio, gere o build (`npm run build`) e hospede o conteudo da pasta `dist/`.
