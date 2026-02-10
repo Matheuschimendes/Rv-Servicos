@@ -67,18 +67,31 @@ const ProfessionalBenefits: React.FC = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div className="flex gap-6 md:gap-8 overflow-x-auto pb-6 md:pb-8 w-screen relative left-1/2 -translate-x-1/2 px-6 snap-x snap-mandatory scroll-px-6">
           {professionalFeatures.map((f, i) => (
-            <div key={i} className="bg-white/5 border border-white/15 p-8 md:p-12 rounded-[2rem] hover:bg-white/10 transition-all duration-500 group shadow-[0_20px_60px_-40px_rgba(0,0,0,0.65)]">
-              <div className="flex flex-col sm:flex-row gap-6 md:gap-8 items-start">
-                <div className="w-14 h-14 bg-brand-light/20 rounded-2xl flex items-center justify-center text-brand-light group-hover:scale-110 transition-transform duration-500 shrink-0">
-                  {f.icon}
+            <div
+              key={i}
+              className="group relative overflow-hidden rounded-[2rem] border border-white/15 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-5 md:p-8 lg:p-10 shadow-[0_25px_70px_-55px_rgba(0,0,0,0.7)] transition-all duration-500 hover:-translate-y-1 hover:bg-white/10 min-w-[82%] sm:min-w-[60%] md:min-w-[420px] lg:min-w-[520px] snap-start"
+            >
+              <div className="absolute left-5 top-5 bottom-5 w-1 rounded-full bg-gradient-to-b from-brand-light/70 via-brand-light/25 to-transparent"></div>
+              <div className="absolute -top-8 -right-8 w-20 h-20 rounded-full bg-brand-light/20 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+              <div className="pl-5 md:pl-6">
+                <div className="flex items-center gap-3 mb-4 md:mb-6">
+                  <div className="w-12 h-12 md:w-14 md:h-14 bg-brand-light/20 rounded-2xl flex items-center justify-center text-brand-light group-hover:scale-110 transition-transform duration-500 shrink-0">
+                    {f.icon}
+                  </div>
+                  <div className="text-[10px] uppercase tracking-[0.4em] text-white/60 font-bold">
+                    Benefício clínico
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold mb-4">{f.title}</h3>
-                  <p className="text-white/50 text-sm md:text-base leading-relaxed font-light group-hover:text-white/80 transition-colors">
-                    {f.desc}
-                  </p>
+                <h3 className="text-lg md:text-2xl font-bold mb-2">{f.title}</h3>
+                <p className="text-white/50 text-sm md:text-base leading-relaxed font-light group-hover:text-white/80 transition-colors">
+                  {f.desc}
+                </p>
+                <div className="mt-5 flex items-center text-[10px] uppercase tracking-[0.3em] text-white/60 font-bold">
+                  <span className="h-px w-10 bg-brand-light mr-3"></span>
+                  Valorização real
                 </div>
               </div>
             </div>

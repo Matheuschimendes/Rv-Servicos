@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
 
           <h1 className="font-display text-3xl md:text-6xl lg:text-6xl font-extrabold text-white leading-[1.15] md:leading-[1.05] mb-6 md:mb-0 text-balance">
             Eficiência assistencial <br />
-            <span className="text-brand-light">sem aumentar estrutura: </span>
+            <span className="text-brand-light ">sem aumentar estrutura: </span>
 
           </h1>
           <h3 className="font-display text-2xl md:text-5xl lg:text-2xl font-bold text-white leading-[1.2] md:leading-[1.2] lg:leading-[2.2] mb-6 md:mb-5 text-balance">

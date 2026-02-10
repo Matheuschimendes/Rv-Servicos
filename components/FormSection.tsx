@@ -38,7 +38,7 @@ const FormSection: React.FC = () => {
                   <label className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] text-brand-dark/50 block">Seu Nome</label>
                   <input
                     type="text"
-                    placeholder="Como podemos te chamar?"
+                    placeholder="Digite seu nome"
                     className="w-full bg-slate-50 border-0 rounded-xl p-6 focus:ring-2 focus:ring-brand-light outline-none text-brand-dark font-medium transition-all"
                     value={name}
                     onChange={(event) => setName(event.target.value)}

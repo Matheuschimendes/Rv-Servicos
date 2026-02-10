@@ -2,13 +2,13 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Stats from './components/Stats';
+// import Stats from './components/Stats';
 import Services from './components/Services';
 import ManagerBenefits from './components/ManagerBenefits';
 import ProfessionalBenefits from './components/ProfessionalBenefits';
 import About from './components/About';
-import HowItWorks from './components/HowItWorks';
-import Testimonials from './components/Testimonials';
+// import HowItWorks from './components/HowItWorks';
+// import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import FormSection from './components/FormSection';
 import Footer from './components/Footer';
@@ -20,7 +20,7 @@ const App: React.FC = () => {
       <Navbar />
       <main>
         <Hero /> {/* Dobra 1 */}
-        <Stats />
+        {/* <Stats /> */}
         <Services /> {/* Dobra 2 */}
 
         {/* Dobras 3 e 4  */}
@@ -29,9 +29,9 @@ const App: React.FC = () => {
 
         <About /> {/* Dobra 5 */}
         {/* <HowItWorks /> */}
-        <Testimonials />
-        <FAQ />
+        {/* <Testimonials /> */}
         <FormSection /> {/* Dobra 6 */}
+        <FAQ />
       </main>
       <Footer /> {/* Dobra 7 */}
       <StickyMobileCTA />
