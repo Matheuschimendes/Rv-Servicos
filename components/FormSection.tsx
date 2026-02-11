@@ -5,11 +5,20 @@ const FormSection: React.FC = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [need, setNeed] = useState('Plantões Avulsos');
+  const [errors, setErrors] = useState<{ name?: string; phone?: string }>({});
 
   // Função para lidar com o envio do formulário
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     // Previne o comportamento padrão do formulário (recarregar a página)
     event.preventDefault();
+    const nextErrors: { name?: string; phone?: string } = {};
+    if (!name.trim()) nextErrors.name = 'Informe seu nome.';
+    if (!phone.trim()) nextErrors.phone = 'Informe seu WhatsApp.';
+    if (Object.keys(nextErrors).length > 0) {
+      setErrors(nextErrors);
+      return;
+    }
+    setErrors({});
     const targetPhone = '5598996020952';
     const message = [
       'Olá, gostaria de uma proposta personalizada.',
@@ -59,20 +68,32 @@ const FormSection: React.FC = () => {
                   <input
                     type="text"
                     placeholder="Digite seu nome"
-                    className="w-full bg-slate-50 border-0 rounded-xl p-6 focus:ring-2 focus:ring-brand-light outline-none text-brand-dark font-medium transition-all"
+                    className={`w-full bg-slate-50 border-0 rounded-xl p-6 outline-none text-brand-dark font-medium transition-all ${errors.name ? 'ring-2 ring-red-500' : 'focus:ring-2 focus:ring-brand-light'}`}
                     value={name}
-                    onChange={(event) => setName(event.target.value)}
+                    onChange={(event) => {
+                      setName(event.target.value);
+                      if (errors.name) setErrors((prev) => ({ ...prev, name: undefined }));
+                    }}
                   />
+                  {errors.name && (
+                    <p className="text-red-600 text-xs font-semibold tracking-wide uppercase">{errors.name}</p>
+                  )}
                 </div>
                 <div className="space-y-3">
                   <label className="text-[10px] md:text-xs font-black uppercase tracking-[0.2em] text-brand-dark/50 block">WhatsApp</label>
                   <input
                     type="tel"
                     placeholder="(00) 00000-0000"
-                    className="w-full bg-slate-50 border-0 rounded-xl p-6 focus:ring-2 focus:ring-brand-light outline-none text-brand-dark font-medium transition-all"
+                    className={`w-full bg-slate-50 border-0 rounded-xl p-6 outline-none text-brand-dark font-medium transition-all ${errors.phone ? 'ring-2 ring-red-500' : 'focus:ring-2 focus:ring-brand-light'}`}
                     value={phone}
-                    onChange={(event) => setPhone(formatPhone(event.target.value))} // Chama a função para formatar o número de telefone
+                    onChange={(event) => {
+                      setPhone(formatPhone(event.target.value));
+                      if (errors.phone) setErrors((prev) => ({ ...prev, phone: undefined }));
+                    }} // Chama a função para formatar o número de telefone
                   />
+                  {errors.phone && (
+                    <p className="text-red-600 text-xs font-semibold tracking-wide uppercase">{errors.phone}</p>
+                  )}
                 </div>
               </div>
 
