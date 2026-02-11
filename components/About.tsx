@@ -23,7 +23,7 @@ const About: React.FC = () => {
               A <strong className="text-brand-dark font-semibold">RV Serviços Médicos</strong> é parceira estratégica de clínicas, hospitais e IES, garantindo eficiência e qualidade assistencial.
             </p>
             <p className="text-sm md:text-lg text-slate-500 mb-10 md:mb-12 leading-relaxed font-light italic border-l-2 border-brand-light/30 pl-6">
-              'Nosso propósito é oferecer soluções completas em terceirização, preceptoria e telemedicina, conectando o melhor da medicina com instituições de excelência.'
+              Nosso propósito é oferecer soluções completas em terceirização, preceptoria e telemedicina, conectando o melhor da medicina com instituições de excelência.
             </p>
             <div className="bg-brand-light/10 p-8 md:p-10 rounded-2xl border-l-4 border-brand-light">
               <p className="text-brand-dark text-base md:text-lg font-bold italic leading-relaxed">

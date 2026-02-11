@@ -21,6 +21,26 @@ const FormSection: React.FC = () => {
     window.open(url, '_blank');
   };
 
+  // Função para formatar o número de telefone
+  const formatPhone = (value: string) => {
+    // Remove todos os caracteres não numéricos e limita a 11 dígitos
+    const digitos = value.replace(/\D/g, '').slice(0, 11);
+
+    // Formatação para DDD + 8 dígitos ou DDD + 9 dígitos
+    if (digitos.length <= 10) {
+      const p1 = digitos.slice(0, 2);
+      const p2 = digitos.slice(2, 6);
+      const p3 = digitos.slice(6, 10);
+      return [p1 && `(${p1})`, p2, p3 && `-${p3}`].filter(Boolean).join(' ').trim();
+    }
+    // Formatação para DDD + 9 dígitos
+    const p1 = digitos.slice(0, 2);
+    const p2 = digitos.slice(2, 7);
+    const p3 = digitos.slice(7, 11);
+    return [`(${p1})`, p2, `-${p3}`].join(' ').trim();
+  };
+
+
   return (
     <section id="formulario" className="py-24 md:py-32 bg-brand-surface">
       <div className="container mx-auto px-6">
@@ -51,7 +71,7 @@ const FormSection: React.FC = () => {
                     placeholder="(00) 00000-0000"
                     className="w-full bg-slate-50 border-0 rounded-xl p-6 focus:ring-2 focus:ring-brand-light outline-none text-brand-dark font-medium transition-all"
                     value={phone}
-                    onChange={(event) => setPhone(event.target.value)}
+                    onChange={(event) => setPhone(formatPhone(event.target.value))} // Chama a função para formatar o número de telefone
                   />
                 </div>
               </div>

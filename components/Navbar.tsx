@@ -5,11 +5,11 @@ const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
+  useEffect(() => { // Verifica se o usuário rolou a página
+    const handleScroll = () => { // Se sim, adiciona um efeito no header
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll); // Adiciona o evento de scroll
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -44,7 +44,9 @@ const Navbar: React.FC = () => {
           <div className="flex items-center space-x-2 md:space-x-3">
             <div className="flex flex-col leading-none">
               <span className={`font-display text-lg md:text-xl font-extrabold tracking-tighter transition-colors duration-300 ${isMenuOpen || !isScrolled ? 'text-white' : 'text-brand-dark'}`}>
-                RV <span className="font-light">Serviços</span>
+                <a href="/" >
+                  RV <span className="font-light">Serviços</span>
+                </a>
               </span>
               <span className="text-[8px] md:text-[10px] uppercase tracking-[0.2em] font-bold text-brand-light">
                 Médicos
