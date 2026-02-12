@@ -6,6 +6,7 @@ const FormSection: React.FC = () => {
   const [need, setNeed] = useState('Plantões Avulsos');
   const [errors, setErrors] = useState<{ name?: string; phone?: string }>({});
 
+
   // Função para lidar com o envio do formulário
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     // Previne o comportamento padrão do formulário (recarregar a página)
