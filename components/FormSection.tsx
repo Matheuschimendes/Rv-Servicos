@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
+import sitePreview from '../assets/images/site-preview.png';
 
 const FormSection: React.FC = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [need, setNeed] = useState('Plantões Avulsos');
   const [errors, setErrors] = useState<{ name?: string; phone?: string }>({});
+  const sectionBg = 'https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1800&q=80';
+  const onImageError = (fallbackSrc: string) => (event: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = event.currentTarget;
+    img.onerror = null;
+    if (img.src !== fallbackSrc) img.src = fallbackSrc;
+  };
 
 
   // Função para lidar com o envio do formulário
@@ -51,8 +58,18 @@ const FormSection: React.FC = () => {
 
 
   return (
-    <section id="formulario" className="py-24 md:py-32 bg-brand-surface">
-      <div className="container mx-auto px-6">
+    <section id="formulario" className="py-24 md:py-32 bg-brand-surface relative overflow-hidden">
+      <img
+        src={sectionBg}
+        alt="Equipe de atendimento e gestão"
+        className="absolute inset-0 h-full w-full object-cover opacity-[0.12]"
+        loading="lazy"
+        onError={onImageError(sitePreview)}
+      />
+
+      <div className="absolute inset-0 bg-[radial-gradient(900px_420px_at_10%_0%,rgba(12,74,110,0.10),transparent)]"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(700px_320px_at_90%_90%,rgba(25,146,180,0.12),transparent)]"></div>
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 md:mb-20">
             <span className="text-brand-dark font-black uppercase text-[10px] md:text-xs tracking-widest mb-3 md:mb-4 block">Próximo Passo</span>

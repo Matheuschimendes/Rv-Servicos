@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../assets/images/logos/logo2.svg';
 
 const Footer: React.FC = () => {
   return (
@@ -13,16 +14,32 @@ const Footer: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_1.9fr] gap-12 md:gap-20 mb-16 md:mb-24">
           <div className="max-w-md">
-            <div className="flex items-center space-x-3 mb-10">
-              <svg width="40" height="30" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 10H40L55 45L70 10H90L65 70H45L20 10Z" fill="#FFFFFF" />
-                <path d="M10 10L25 70H5" stroke="#00B0FC" strokeWidth="8" />
-              </svg>
-              <div className="flex flex-col leading-none">
-                <span className="font-display text-xl font-extrabold">RV <span className="font-light">Serviços</span></span>
-                <span className="text-[10px] uppercase tracking-widest font-bold text-brand-light">Médicos</span>
-              </div>
-            </div>
+            <a href="/" className="group inline-flex flex-col leading-none [perspective:900px] mb-5">
+              <span className="inline-flex items-end gap-1">
+                <span
+                  className={`font-display text-3xl md:text-4xl font-black tracking-[-0.035em] transition-all duration-300`}
+
+                >
+                  <img
+                    src={logo}
+                    alt="Logo RV Serviços Médicos"
+                    className={`h-8 md:h-10 w-auto object-contain transition-all duration-300`}
+                  />
+                </span>
+                <span
+                  className={`font-display text-[1.9rem] md:text-[1.5rem] font-semibold tracking-[-0.03em] transition-all duration-300 group-hover:[transform:translateZ(6px)_rotateX(3deg)] `}
+                >
+                  Serviços
+                </span>
+              </span>
+              <span className="mt-1 inline-flex items-center gap-2">
+                <span className="text-[10px] md:text-[11px] uppercase tracking-[0.32em] font-black text-brand-light">
+                  Médicos
+                </span>
+                <span className={`h-px w-10 transition-all duration-300 group-hover:w-14`}></span>
+              </span>
+            </a>
+
             <p className="text-white/50 text-base leading-relaxed font-light">
               Eficiência, inovação e humanização na gestão de serviços médicos. Conectando o melhor da medicina com instituições de excelência.
             </p>

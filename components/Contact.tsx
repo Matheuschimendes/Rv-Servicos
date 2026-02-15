@@ -1,15 +1,31 @@
 
 import React from 'react';
+import brazilMapBg from '../assets/images/bg.png';
 
 const Contact: React.FC = () => {
+  const sectionBg = 'https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1800&q=80';
+  const onImageError = (fallbackSrc: string) => (event: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = event.currentTarget;
+    img.onerror = null;
+    if (img.src !== fallbackSrc) img.src = fallbackSrc;
+  };
+
   return (
-    <section id="contato" className="py-24 md:py-32 bg-surface">
-      <div className="container mx-auto px-6">
+    <section id="contato" className="py-24 md:py-32 bg-surface relative overflow-hidden">
+      <img
+        src={sectionBg}
+        alt="Central de atendimento"
+        className="absolute inset-0 h-full w-full object-cover opacity-[0.12]"
+        loading="lazy"
+        onError={onImageError(brazilMapBg)}
+      />
+      <div className="absolute inset-0 bg-white/88"></div>
+      <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
           <div className="lg:w-1/2">
             <span className="text-brand-green font-black uppercase text-xs tracking-[0.3em] mb-4 block">Fale Conosco</span>
             <h2 className="font-display text-4xl font-extrabold mb-10 text-brand-petrol">Canais de Atendimento</h2>
-            
+
             <div className="space-y-6 md:space-y-8">
               <div className="flex items-start space-x-4 md:space-x-5 group">
                 <div className="bg-white p-3 md:p-4 rounded-2xl shadow-sm text-brand-green group-hover:bg-brand-green group-hover:text-white transition-all duration-300">
@@ -51,7 +67,7 @@ const Contact: React.FC = () => {
 
           <div className="lg:w-1/2">
             <div className="bg-white p-2 rounded-[2rem] md:rounded-[2.5rem] shadow-2xl shadow-brand-petrol/5 overflow-hidden h-[300px] md:h-[450px]">
-              <iframe 
+              <iframe
                 src="https://maps.google.com/maps?q=Rua%20Acyr%20Guimar%C3%A3es%2C%20222%206%C2%BA%20andar%20-%20%C3%81gua%20Verde%20-%C2%A0Curitiba%2FPR%20-%C2%A0CEP%3A%2080240-230&t=m&z=15&output=embed&iwloc=near"
                 className="w-full h-full rounded-[1.8rem] md:rounded-[2rem]"
                 loading="lazy"

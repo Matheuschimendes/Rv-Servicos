@@ -1,22 +1,42 @@
 
 import React from 'react';
 
+import brazilMapBg from '../assets/images/bg.png';
+import sitePreview from '../assets/images/site-preview.png';
+
 const testimonials = [
   {
     text: "Tenho orgulho e prazer em trabalhar na Helpmed. Uma empresa compromissada com a ética, seriedade e em prestar um serviço de qualidade.",
     author: "Dr. Emerson Diogo Ribeiro Izumi",
-    role: "Médico Clínico Geral - Curitiba/PR"
+    role: "Médico Clínico Geral - Curitiba/PR",
+    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=520&q=80"
   },
   {
     text: "Solucionamos um dos maiores problemas que toda gestão municipal pode enfrentar: a falta de médicos qualificados e empáticos.",
     author: "Juliana Dutra do Prado",
-    role: "Ex-Secretária de Saúde - São Domingos/SC"
+    role: "Ex-Secretária de Saúde - São Domingos/SC",
+    image: "https://images.unsplash.com/photo-1594824475317-d2b8f90b7f81?auto=format&fit=crop&w=520&q=80"
   }
 ];
 
 const Testimonials: React.FC = () => {
+  const sectionBg = "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1800&q=80";
+  const onImageError = (fallbackSrc: string) => (event: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = event.currentTarget;
+    img.onerror = null;
+    if (img.src !== fallbackSrc) img.src = fallbackSrc;
+  };
+
   return (
     <section className="py-24 md:py-32 bg-brand-dark text-white relative overflow-hidden">
+      <img
+        src={sectionBg}
+        alt="Médicos em atendimento"
+        className="absolute inset-0 h-full w-full object-cover opacity-20"
+        loading="lazy"
+        onError={onImageError(brazilMapBg)}
+      />
+
       <div className="absolute inset-0 bg-[radial-gradient(900px_420px_at_80%_10%,rgba(255,255,255,0.12),transparent)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(700px_320px_at_15%_85%,rgba(255,255,255,0.08),transparent)]"></div>
       <div className="absolute top-0 right-0 w-1/3 h-full bg-brand-light/10 skew-x-12 translate-x-20"></div>
@@ -50,9 +70,18 @@ const Testimonials: React.FC = () => {
               <p className="text-lg md:text-xl italic text-slate-700 mb-8 leading-relaxed relative z-10">
                 “{t.text}”
               </p>
-              <div>
-                <h5 className="font-bold text-slate-900">{t.author}</h5>
-                <p className="text-brand-dark text-sm font-semibold">{t.role}</p>
+              <div className="flex items-center gap-4">
+                <img
+                  src={t.image}
+                  alt={`Foto de ${t.author}`}
+                  className="w-14 h-14 rounded-2xl object-cover border border-slate-200"
+                  loading="lazy"
+                  onError={onImageError(sitePreview)}
+                />
+                <div>
+                  <h5 className="font-bold text-slate-900">{t.author}</h5>
+                  <p className="text-brand-dark text-sm font-semibold">{t.role}</p>
+                </div>
               </div>
             </div>
           ))}

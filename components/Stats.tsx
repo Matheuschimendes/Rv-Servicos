@@ -1,9 +1,12 @@
 
 import React, { useEffect, useRef, useState } from 'react';
+import sitePreview from '../assets/images/site-preview.png';
+
 
 type StatCardProps = {
   target: number;
   label: string;
+  image: string;
   suffix?: string;
   formatter?: (value: number) => string;
   inView: boolean;
@@ -39,12 +42,24 @@ const useCountUp = (target: number, durationMs: number, start: boolean) => {
   return value;
 };
 
-const StatCard: React.FC<StatCardProps> = ({ target, label, suffix, formatter, inView }) => {
+const StatCard: React.FC<StatCardProps> = ({ target, label, image, suffix, formatter, inView }) => {
   const value = useCountUp(target, 1400, inView);
   const displayValue = formatter ? formatter(value) : value.toString();
+  const onImageError = (event: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = event.currentTarget;
+    img.onerror = null;
+    img.src = sitePreview;
+  };
 
   return (
-    <div className="group bg-white p-8 md:p-12 rounded-card border border-slate-100 shadow-sm transition-all duration-500 hover:shadow-lg">
+    <div className="group bg-white p-3 md:p-4 rounded-card border border-slate-100 shadow-sm transition-all duration-500 hover:shadow-lg">
+      <img
+        src={image}
+        alt={`Imagem do indicador ${label}`}
+        className="w-full h-24 md:h-28 object-cover rounded-2xl mb-5"
+        loading="lazy"
+        onError={onImageError}
+      />
       <div className="flex flex-col items-center">
         <div className="text-3xl md:text-5xl font-display font-extrabold text-brand-dark mb-2 md:mb-3 tracking-tighter">
           {displayValue}
@@ -91,10 +106,10 @@ const Stats: React.FC = () => {
     <section ref={sectionRef} className="py-12 md:py-20 bg-brand-surface -mt-12 md:-mt-24 relative z-20">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-          <StatCard target={5} label="Estados Atendidos" inView={inView} />
-          <StatCard target={3100} label="Médicos Ativos" suffix="+" formatter={formatCompact} inView={inView} />
+          <StatCard target={5} label="Estados Atendidos" image="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=900&q=80" inView={inView} />
+          <StatCard target={3100} label="Médicos Ativos" image="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=900&q=80" suffix="+" formatter={formatCompact} inView={inView} />
           <div className="col-span-2 md:col-span-1">
-            <StatCard target={10000} label="Plantões Mensais" suffix="+" formatter={formatCompact} inView={inView} />
+            <StatCard target={10000} label="Plantões Mensais" image="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80" suffix="+" formatter={formatCompact} inView={inView} />
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 
+import logo from '../assets/images/logos/logo2.svg';
+
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,6 +31,13 @@ const Navbar: React.FC = () => {
     { name: 'Médicos', href: '#beneficios-medicos' },
     { name: 'Quem Somos', href: '#quem-somos' },
   ];
+  const logoOnDark = isMenuOpen || !isScrolled;
+  const rvShadow = logoOnDark
+    ? '0 1px 0 rgba(255,255,255,0.65), 0 2px 0 rgba(180,220,255,0.55), 0 5px 14px rgba(0,0,0,0.45), 0 14px 22px rgba(0,25,45,0.35)'
+    : '0 1px 0 rgba(255,255,255,0.7), 0 2px 0 rgba(142,195,236,0.45), 0 5px 10px rgba(0,58,102,0.2), 0 10px 18px rgba(0,58,102,0.18)';
+  const servicosShadow = logoOnDark
+    ? '0 1px 0 rgba(255,255,255,0.55), 0 2px 0 rgba(164,212,250,0.45), 0 4px 10px rgba(0,0,0,0.42)'
+    : '0 1px 0 rgba(255,255,255,0.65), 0 2px 0 rgba(150,199,236,0.35), 0 4px 8px rgba(0,58,102,0.18)';
 
   return (
     <>
@@ -41,18 +50,36 @@ const Navbar: React.FC = () => {
       >
         <div className="container mx-auto px-6 flex justify-between items-center relative z-[130]">
           {/* Logo Section */}
-          <div className="flex items-center space-x-2 md:space-x-3">
-            <div className="flex flex-col leading-none">
-              <span className={`font-display text-lg md:text-xl font-extrabold tracking-tighter transition-colors duration-300 ${isMenuOpen || !isScrolled ? 'text-white' : 'text-brand-dark'}`}>
-                <a href="/" >
-                  RV <span className="font-light">Serviços</span>
-                </a>
+          <a href="/" className="group inline-flex flex-col leading-none [perspective:900px]">
+            <span className="inline-flex items-end gap-1">
+              <span
+                className={`font-display text-3xl md:text-4xl font-black tracking-[-0.035em] transition-all duration-300 ${logoOnDark
+                  ? 'bg-gradient-to-b from-white to-[#bfe6ff] bg-clip-text text-transparent'
+                  : 'text-brand-dark'
+                  }`}
+                style={{ textShadow: rvShadow }}
+              >
+                <img
+                  src={logo}
+                  alt="Logo RV Serviços Médicos"
+                  className={`h-8 md:h-10 w-auto object-contain transition-all duration-300 ${logoOnDark ? 'drop-shadow-[0_8px_18px_rgba(0,0,0,0.35)]' : 'drop-shadow-[0_6px_14px_rgba(0,58,102,0.25)]'
+                    }`}
+                />
               </span>
-              <span className="text-[8px] md:text-[10px] uppercase tracking-[0.2em] font-bold text-brand-light">
+              <span
+                className={`font-display text-[1.9rem] md:text-[1.5rem] font-semibold tracking-[-0.03em] transition-all duration-300 group-hover:[transform:translateZ(6px)_rotateX(3deg)] ${logoOnDark ? 'text-white' : 'text-brand-dark'}`}
+                style={{ textShadow: servicosShadow }}
+              >
+                Serviços
+              </span>
+            </span>
+            <span className="mt-1 inline-flex items-center gap-2">
+              <span className="text-[10px] md:text-[11px] uppercase tracking-[0.32em] font-black text-brand-light">
                 Médicos
               </span>
-            </div>
-          </div>
+              <span className={`h-px w-10 transition-all duration-300 group-hover:w-14 ${logoOnDark ? 'bg-white/45' : 'bg-brand-light/50'}`}></span>
+            </span>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-10">

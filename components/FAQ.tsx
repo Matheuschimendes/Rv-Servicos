@@ -1,35 +1,49 @@
 
 import React, { useState } from 'react';
+import sitePreview from '../assets/images/site-preview.png';
 
 const faqs = [
+  {
+    q: "Qual o prazo para implementação dos serviços?",
+    a: "Após análise do estudo de viabilidade, a implementação pode iniciar em até 15 dias úteis, dependendo da complexidade e demanda da instituição. Nossa equipe garante uma transição ágil e segura."
+  },
+  {
+    q: "Como funciona o estudo de viabilidade?",
+    a: "Realizamos uma análise completa e gratuita das necessidades da sua instituição, mapeando demandas, especialidades necessárias e propondo soluções personalizadas com previsão de custos e prazos. Resposta em até 24h."
+  },
+  {
+    q: "A RV atende em todo o Brasil?",
+    a: "Sim! Atuamos em diferentes estados do país com equipes qualificadas e estrutura para atender demandas em diversas localidades. Consulte disponibilidade para sua região."
+  },
   {
     q: "Quais documentos são necessários para o cadastro?",
     a: "Basicamente CRM ativo, comprovante de residência e documentos de identificação. Para especialistas, solicitamos o RQE ou certificado de conclusão de residência."
   },
   {
-    q: "Como é feito o pagamento dos plantões?",
-    a: "O pagamento é realizado via transferência bancária ou PIX, seguindo o cronograma acordado para cada unidade, sempre com máxima pontualidade."
-  },
-  {
-    q: "A RV oferece suporte durante o plantão?",
-    a: "Sim! Nossa Central de Atendimento ao Médico (CAM) funciona 24h por dia, 7 dias por semana, para auxiliar em qualquer intercorrência administrativa ou de escala."
-  },
-  {
-    q: "Posso escolher plantões em outros estados?",
-    a: "Com certeza. Atuamos em diversos estados e você pode se candidatar a vagas em qualquer um deles, desde que possua o visto provisório ou secundário no CRM local."
+    q: "Qual o diferencial da RV Serviços Médicos?",
+    a: "Combinamos eficiência operacional, tecnologia de gestão, equipe qualificada e atendimento humanizado, garantindo parceria estratégica de longo prazo com foco em resultados."
   }
 ];
 
 const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const sectionBg = "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1800&q=80";
+  const onImageError = (fallbackSrc: string) => (event: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = event.currentTarget;
+    img.onerror = null;
+    if (img.src !== fallbackSrc) img.src = fallbackSrc;
+  };
 
   return (
-    <section className="py-24 md:py-32 bg-white">
-      <div className="container mx-auto px-6">
+    <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+
+      <div className="absolute inset-0 bg-white/85"></div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
           <div className="lg:w-1/3">
             <span className="text-brand-dark font-black uppercase text-[10px] md:text-xs tracking-[0.3em] mb-3 md:mb-4 block">Transparência</span>
-            <h2 className="font-display text-3xl md:text-5xl font-extrabold text-brand-dark mb-8 leading-tight">Perguntas <br/> Frequentes</h2>
+            <h2 className="font-display text-3xl md:text-5xl font-extrabold text-brand-dark mb-8 leading-tight">Perguntas <br /> Frequentes</h2>
             <p className="text-slate-500 mb-10 font-light text-base md:text-lg">
               Não encontrou o que procurava? Entre em contato direto com nosso time comercial.
             </p>
@@ -40,14 +54,14 @@ const FAQ: React.FC = () => {
               </svg>
             </button>
           </div>
-          
+
           <div className="lg:w-2/3 space-y-6">
             {faqs.map((item, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 className={`rounded-2xl border transition-all duration-300 ${openIndex === idx ? 'border-brand-light bg-brand-surface shadow-sm' : 'border-slate-100 bg-white'}`}
               >
-                <button 
+                <button
                   onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
                   className="w-full px-8 py-7 text-left flex justify-between items-center"
                 >

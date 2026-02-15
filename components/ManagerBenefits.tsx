@@ -1,10 +1,13 @@
 
 import React from 'react';
+import sitePreview from '../assets/images/site-preview.png';
 
 const managerFeatures = [
   {
     title: "Equipes completas e adaptadas",
     desc: "Equipes completas e adaptadas às necessidades da instituição.",
+    image: 'https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=900&q=80',
+
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-1a4 4 0 00-4-4h-1m-4 5H2v-1a4 4 0 014-4h7m-1-4a4 4 0 10-8 0 4 4 0 008 0zm6 2a3 3 0 10-6 0 3 3 0 006 0z" />
@@ -14,6 +17,8 @@ const managerFeatures = [
   {
     title: "Otimização de custos e processos",
     desc: "Otimização de custos e processos administrativos.",
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80',
+
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -23,6 +28,9 @@ const managerFeatures = [
   {
     title: "Suporte contínuo e especializado",
     desc: "Suporte contínuo e especializado com inovação tecnológica.",
+    image: 'https://images.unsplash.com/photo-1578496479539-722d9dd1cc72?auto=format&fit=crop&w=900&q=80',
+
+
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -32,6 +40,9 @@ const managerFeatures = [
   {
     title: "Segurança e qualidade no atendimento",
     desc: "Maior segurança e qualidade no atendimento com melhor experiência do paciente.",
+    image: 'https://images.unsplash.com/photo-1624727828489-a1e03b79bba8?auto=format&fit=crop&w=900&q=80',
+
+
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -41,8 +52,25 @@ const managerFeatures = [
 ];
 
 const ManagerBenefits: React.FC = () => {
+  // Imagem de fundo
+  const sectionBgOne = "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1800&q=80";
+  const onImageError = (fallbackSrc: string) => (event: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = event.currentTarget;
+    img.onerror = null;
+    if (img.src !== fallbackSrc) img.src = fallbackSrc;
+  };
+
   return (
     <section id="beneficios-gestores" className="py-24 md:py-32 bg-brand-surface relative overflow-hidden">
+      <img
+        src={sectionBgOne}
+        alt="Ambiente institucional de saúde"
+        className="absolute inset-0 h-full w-full object-cover opacity-[0.14]"
+        loading="lazy"
+        onError={onImageError(sitePreview)}
+      />
+      <div className="absolute inset-0 bg-white/78"></div>
+
       <div className="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 bg-brand-light/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -69,12 +97,12 @@ const ManagerBenefits: React.FC = () => {
             {managerFeatures.map((f, i) => (
               <div
                 key={i}
-                className="group relative overflow-hidden rounded-[2.25rem] border border-white/70 bg-gradient-to-br from-white/90 via-white/80 to-brand-light/10 p-7 md:p-10 shadow-[0_25px_70px_-55px_rgba(15,23,42,0.6)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_35px_90px_-60px_rgba(15,23,42,0.65)]"
+                className="group relative overflow-hidden rounded-[2.25rem] border border-white/70 bg-gradient-to-br from-white/90 via-white/80 to-brand-light/10 p-6 md:p-8 shadow-[0_25px_70px_-55px_rgba(15,23,42,0.6)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_35px_90px_-60px_rgba(15,23,42,0.65)] h-full"
               >
                 <div className="absolute left-6 top-6 bottom-6 w-1.5 rounded-full bg-gradient-to-b from-brand-light/70 via-brand-light/25 to-transparent"></div>
                 <div className="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-brand-light/15 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
-                <div className="pl-6 md:pl-7">
+                <div className="pl-5 md:pl-6 h-full flex flex-col">
                   <div className="flex items-center gap-4 mb-5 md:mb-7">
                     <div className="w-12 h-12 md:w-14 md:h-14 bg-brand-dark/5 rounded-2xl flex items-center justify-center text-brand-dark group-hover:bg-brand-dark group-hover:text-white transition-all duration-300">
                       {f.icon}
@@ -83,11 +111,12 @@ const ManagerBenefits: React.FC = () => {
                       Benefício-chave
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-brand-dark mb-3 leading-tight">{f.title}</h3>
-                  {f.desc ? (
-                    <p className="text-slate-500 text-sm md:text-base leading-relaxed font-light">{f.desc}</p>
-                  ) : null}
-                  <div className="mt-6 flex items-center text-[10px] uppercase tracking-[0.3em] text-brand-dark/60 font-bold">
+                  <h3 className="text-lg md:text-xl font-bold text-brand-dark mb-3 leading-tight min-h-[56px] md:min-h-[64px]">{f.title}</h3>
+                  <p className="text-slate-500 text-sm md:text-base leading-relaxed font-light min-h-[52px] md:min-h-[60px]">
+                    {f.desc}
+                  </p>
+
+                  <div className="mt-6 pt-1 flex items-center text-[10px] uppercase tracking-[0.3em] text-brand-dark/60 font-bold">
                     <span className="h-px w-10 bg-brand-light mr-3"></span>
                     Resultado mensurável
                   </div>

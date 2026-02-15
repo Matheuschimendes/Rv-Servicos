@@ -1,10 +1,19 @@
 
 import React from 'react';
 
+
 const About: React.FC = () => {
+  const sectionBg = 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1800&q=80';
+  const onImageError = (fallbackSrc: string) => (event: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = event.currentTarget;
+    img.onerror = null;
+    if (img.src !== fallbackSrc) img.src = fallbackSrc;
+  };
+
   return (
-    <section id="quem-somos" className="py-24 md:py-32 bg-white text-brand-dark relative">
-      <div className="container mx-auto px-6">
+    <section id="quem-somos" className="py-24 md:py-32 bg-white text-brand-dark relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(800px_320px_at_15%_10%,rgba(25,146,180,0.10),transparent)]"></div>
+      <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           <div className="lg:w-1/2 w-full">
             <div className="bg-brand-surface p-12 md:p-16 rounded-card border border-slate-100 relative overflow-hidden group shadow-sm">
