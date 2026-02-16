@@ -93,30 +93,30 @@ const ManagerBenefits: React.FC = () => {
             </div>
           </div>
 
-          <div className="w-full lg:w-7/12 grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-8">
+          <div className="w-full lg:w-7/12 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
             {managerFeatures.map((f, i) => (
               <div
                 key={i}
-                className="group relative overflow-hidden rounded-[2.25rem] border border-white/70 bg-gradient-to-br from-white/90 via-white/80 to-brand-light/10 p-6 md:p-8 shadow-[0_25px_70px_-55px_rgba(15,23,42,0.6)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_35px_90px_-60px_rgba(15,23,42,0.65)] h-full"
+                className="group relative overflow-hidden rounded-[2rem] md:rounded-[2.25rem] border border-white/70 bg-gradient-to-br from-white/90 via-white/80 to-brand-light/10 p-5 md:p-8 shadow-[0_25px_70px_-55px_rgba(15,23,42,0.6)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_35px_90px_-60px_rgba(15,23,42,0.65)] h-full"
               >
-                <div className="absolute left-6 top-6 bottom-6 w-1.5 rounded-full bg-gradient-to-b from-brand-light/70 via-brand-light/25 to-transparent"></div>
+                <div className="absolute left-5 md:left-6 top-5 md:top-6 bottom-5 md:bottom-6 w-1.5 rounded-full bg-gradient-to-b from-brand-light/70 via-brand-light/25 to-transparent"></div>
                 <div className="absolute -top-10 -right-10 w-24 h-24 rounded-full bg-brand-light/15 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
-                <div className="pl-5 md:pl-6 h-full flex flex-col">
-                  <div className="flex items-center gap-4 mb-5 md:mb-7">
-                    <div className="w-12 h-12 md:w-14 md:h-14 bg-brand-dark/5 rounded-2xl flex items-center justify-center text-brand-dark group-hover:bg-brand-dark group-hover:text-white transition-all duration-300">
+                <div className="pl-4 md:pl-6 h-full flex flex-col">
+                  <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-7">
+                    <div className="w-11 h-11 md:w-14 md:h-14 bg-brand-dark/5 rounded-2xl flex items-center justify-center text-brand-dark group-hover:bg-brand-dark group-hover:text-white transition-all duration-300">
                       {f.icon}
                     </div>
-                    <div className="text-[10px] uppercase tracking-[0.4em] text-brand-dark/60 font-bold">
+                    <div className="text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] text-brand-dark/60 font-bold">
                       Benefício-chave
                     </div>
                   </div>
-                  <h3 className="text-lg md:text-xl font-bold text-brand-dark mb-3 leading-tight min-h-[56px] md:min-h-[64px]">{f.title}</h3>
-                  <p className="text-slate-500 text-sm md:text-base leading-relaxed font-light min-h-[52px] md:min-h-[60px]">
+                  <h3 className="text-lg md:text-xl font-bold text-brand-dark mb-2 md:mb-3 leading-tight min-h-0 md:min-h-[64px]">{f.title}</h3>
+                  <p className="text-slate-500 text-sm md:text-base leading-relaxed font-light min-h-0 md:min-h-[60px]">
                     {f.desc}
                   </p>
 
-                  <div className="mt-6 pt-1 flex items-center text-[10px] uppercase tracking-[0.3em] text-brand-dark/60 font-bold">
+                  <div className="mt-5 md:mt-6 pt-1 flex items-center text-[10px] uppercase tracking-[0.3em] text-brand-dark/60 font-bold">
                     <span className="h-px w-10 bg-brand-light mr-3"></span>
                     Resultado mensurável
                   </div>
