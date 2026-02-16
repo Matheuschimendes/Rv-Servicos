@@ -111,9 +111,9 @@ const ManagerBenefits: React.FC = () => {
                       Benefício-chave
                     </div>
                   </div>
-                  <div className="space-y-3 md:space-y-4">
-                    <h3 className="text-lg md:text-xl font-bold text-brand-dark leading-[1.12]">{f.title}</h3>
-                    <p className="text-slate-500 text-sm md:text-base leading-[1.45] md:leading-relaxed font-light">
+                  <div className="space-y-4 md:space-y-4">
+                    <h3 className="text-lg md:text-xl font-bold text-brand-dark leading-[1.28] break-words">{f.title}</h3>
+                    <p className="text-slate-500 text-sm md:text-base leading-[1.55] md:leading-relaxed font-light">
                       {f.desc}
                     </p>
                   </div>
