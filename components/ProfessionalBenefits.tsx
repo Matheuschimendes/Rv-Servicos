@@ -173,7 +173,8 @@ const ProfessionalBenefits: React.FC = () => {
           </h2>
         </div>
 
-        <div ref={carouselRef} className="flex gap-6 md:gap-6 overflow-x-auto pb-6 md:pb-8 w-screen relative px-0 snap-x snap-mandatory ">
+        {/* <div ref={carouselRef} className="flex gap-6 md:gap-6 overflow-x-auto pb-6 md:pb-8 w-screen relative px-0 snap-x snap-mandatory "> */}
+        <div ref={carouselRef} className="flex gap-6 md:gap-6 overflow-x-auto pb-6 md:pb-8 w-screen ml-[calc(50%-50vw)] px-6 relative snap-x snap-mandatory scroll-px-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           {professionalFeatures.map((f, i) => (
             <div
               key={i}
