@@ -12,7 +12,6 @@ import About from './components/About';
 import FAQ from './components/FAQ';
 import FormSection from './components/FormSection';
 import Footer from './components/Footer';
-import StickyMobileCTA from './components/StickyMobileCTA';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -23,6 +22,11 @@ const App: React.FC = () => {
 
     const sections = Array.from(document.querySelectorAll<HTMLElement>('main section, footer'));
     if (!sections.length) return;
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    const sectionDelayStep = isMobile ? 45 : 80;
+    const sectionDelayMax = isMobile ? 180 : 320;
+    const itemDelayStep = isMobile ? 55 : 90;
+    const itemDelayMax = isMobile ? 320 : 620;
 
     const sectionObserver = new IntersectionObserver(
       (entries) => {
@@ -74,7 +78,7 @@ const App: React.FC = () => {
 
     sections.forEach((section, sectionIndex) => {
       section.classList.add('scroll-reveal-section');
-      section.style.setProperty('--reveal-section-delay', `${Math.min(sectionIndex * 80, 320)}ms`);
+      section.style.setProperty('--reveal-section-delay', `${Math.min(sectionIndex * sectionDelayStep, sectionDelayMax)}ms`);
       sectionObserver.observe(section);
 
       const container = section.querySelector<HTMLElement>(':scope > .container') || section.querySelector<HTMLElement>('.container');
@@ -92,7 +96,7 @@ const App: React.FC = () => {
 
       Array.from(stagedItems).forEach((item, itemIndex) => {
         item.classList.add('scroll-reveal-item');
-        item.style.setProperty('--reveal-item-delay', `${Math.min(itemIndex * 90, 620)}ms`);
+        item.style.setProperty('--reveal-item-delay', `${Math.min(itemIndex * itemDelayStep, itemDelayMax)}ms`);
         itemObserver.observe(item);
         revealItems.push(item);
       });
@@ -133,7 +137,6 @@ const App: React.FC = () => {
         <FAQ />
       </main>
       <Footer /> {/* Dobra 7 */}
-      <StickyMobileCTA />
     </div>
   );
 };
