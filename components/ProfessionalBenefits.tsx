@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import sitePreview from '../assets/images/site-preview.png';
 
 
@@ -70,6 +70,69 @@ const professionalFeatures = [
 ];
 
 const ProfessionalBenefits: React.FC = () => {
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    const desktopQuery = window.matchMedia('(min-width: 768px)');
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let autoScrollTimer: ReturnType<typeof setInterval> | null = null;
+
+    const stopAutoScroll = () => {
+      if (autoScrollTimer) {
+        clearInterval(autoScrollTimer);
+        autoScrollTimer = null;
+      }
+    };
+
+    // Ajuste o intervalo de rolagem para 2500ms (2,5 segundos)
+    const startAutoScroll = () => {
+      stopAutoScroll();
+
+      if (!desktopQuery.matches || reducedMotionQuery.matches) {
+        return;
+      }
+
+      autoScrollTimer = setInterval(() => {
+        const currentCarousel = carouselRef.current;
+        if (!currentCarousel) return;
+        // Ajuste o máximo de rolagem para 20px antes do final
+        const maxScrollLeft = currentCarousel.scrollWidth - currentCarousel.clientWidth;
+        if (maxScrollLeft <= 0) return;
+        // Passo maior para acelerar o avanço percebido do carrossel
+        const scrollStep = Math.max(420, Math.round(currentCarousel.clientWidth * 0.2));
+        const nextPosition = currentCarousel.scrollLeft + scrollStep;
+
+        currentCarousel.scrollTo({
+          left: nextPosition >= maxScrollLeft - 20 ? 0 : nextPosition,
+          behavior: 'smooth',
+        });
+      }, 1800);
+    };
+
+    const syncAutoScroll = () => {
+      if (desktopQuery.matches && !reducedMotionQuery.matches) {
+        startAutoScroll();
+      } else {
+        stopAutoScroll();
+      }
+    };
+
+    syncAutoScroll();
+    carousel.addEventListener('mouseenter', stopAutoScroll);
+    carousel.addEventListener('mouseleave', startAutoScroll);
+    window.addEventListener('resize', syncAutoScroll);
+
+    return () => {
+      stopAutoScroll();
+      carousel.removeEventListener('mouseenter', stopAutoScroll);
+      carousel.removeEventListener('mouseleave', startAutoScroll);
+      window.removeEventListener('resize', syncAutoScroll);
+    };
+  }, []);
+
   const onImageError = (fallbackSrc: string) => (event: React.SyntheticEvent<HTMLImageElement>) => {
     const img = event.currentTarget;
     img.onerror = null;
@@ -96,7 +159,7 @@ const ProfessionalBenefits: React.FC = () => {
           </h2>
         </div>
 
-        <div className="flex gap-6 md:gap-8 overflow-x-auto pb-6 md:pb-8 w-screen relative left-1/2 -translate-x-1/2 px-6 snap-x snap-mandatory scroll-px-6">
+        <div ref={carouselRef} className="flex gap-6 md:gap-8 overflow-x-auto pb-6 md:pb-8 w-[calc(100vw-1rem)] md:w-screen relative left-1/2 -translate-x-1/2 px-0 md:px-6 snap-x snap-mandatory scroll-px-0 md:scroll-px-6">
           {professionalFeatures.map((f, i) => (
             <div
               key={i}
