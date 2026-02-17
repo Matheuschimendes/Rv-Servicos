@@ -18,6 +18,8 @@ const webImages = {
     'https://images.unsplash.com/photo-1631217868264-e6b4f1f9f2f5?auto=format&fit=crop&w=1500&q=80'
 };
 
+const whatsappLink = "https://wa.me/5511915735662?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20contratar%20a%20RV%20Servi%C3%A7os%20M%C3%A9dicos!%20Pode%20me%20ajudar%3F";
+
 const Hero: React.FC = () => {
   const onImageError = (fallbackSrc: string) => (event: React.SyntheticEvent<HTMLImageElement>) => {
     const img = event.currentTarget;
@@ -62,7 +64,8 @@ const Hero: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
               <a
-                href="https://wa.me/5577998102422?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20contratar%20a%20RV%20Servi%C3%A7os%20M%C3%A9dicos!%20Pode%20me%20ajudar%3F"
+                href={whatsappLink}
+                target="_blank"
                 className="bg-brand-light text-white text-center px-8 md:px-12 py-4 md:py-5 rounded-xl text-base md:text-lg font-black shadow-[0_20px_60px_-25px_rgba(0,0,0,0.65)] hover:bg-white hover:text-brand-dark transition-all active:scale-95"
               >
                 FALAR NO WHATSAPP

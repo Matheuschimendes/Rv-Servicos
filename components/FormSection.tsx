@@ -26,7 +26,7 @@ const FormSection: React.FC = () => {
       return;
     }
     setErrors({});
-    const targetPhone = '5577998102422';
+    const targetPhone = '5511915735662';
     const message = [
       'Olá, gostaria de uma proposta personalizada.',
       `Nome: ${name || 'Não informado'}`,
