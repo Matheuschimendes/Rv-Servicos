@@ -19,14 +19,14 @@ const services = [
   {
     title: 'Apoio Administrativo',
     desc: 'Gestão de processos e suporte estratégico hospitalar.',
-    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01',
     image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80'
   },
   {
     title: 'Preceptoria Médica',
     desc: 'Foco em instituições de ensino superior e formação de qualidade.',
     icon: 'M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z',
-    image: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=900&q=80'
+    image: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=900&q=80'
   },
   {
     title: 'Apoio Diagnóstico',
@@ -94,7 +94,7 @@ const Services: React.FC = () => {
             NOSSOS SERVIÇOS
           </h2>
           <div className="w-24 md:w-32 h-1.5 bg-brand-light mx-auto mt-6 rounded-full"></div>
-          <p className="text-slate-600 text-sm md:text-lg max-w-4xl mx-auto mt-7 font-light leading-relaxed">
+          <p className="text-slate-700 text-sm md:text-xl max-w-4xl mx-auto mt-7 leading-relaxed">
             Oferecemos serviços de saúde com gestão estruturada, controle de indicadores e rigor técnico, garantindo eficiência operacional, conformidade e resultados sustentáveis.
 
           </p>
@@ -142,7 +142,7 @@ const Services: React.FC = () => {
                     </div>
                   </div>
                   <h3 className="text-xl md:text-2xl font-bold mb-3 text-brand-dark leading-snug min-h-[60px]">{item.title}</h3>
-                  <p className="text-slate-500 text-sm md:text-base leading-relaxed font-light min-h-[52px]">{item.desc}</p>
+                  <p className="text-slate-600 text-sm md:text-base leading-relaxed min-h-[52px]">{item.desc}</p>
                   <div className="mt-5 rounded-2xl overflow-hidden border border-slate-100 ring-1 ring-white">
                     <img
                       src={item.image}

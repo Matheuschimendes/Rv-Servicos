@@ -50,7 +50,7 @@ const Testimonials: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mt-4 mb-4">
             O que dizem nossos parceiros
           </h2>
-          <p className="text-white/60 max-w-2xl mx-auto">
+          <p className="text-white/80 text-lg md:text-xl max-w-2xl mx-auto">
             Histórias de sucesso construídas com ética, agilidade e parceria duradoura.
           </p>
         </div>
@@ -67,7 +67,7 @@ const Testimonials: React.FC = () => {
                 </svg>
               </div>
 
-              <p className="text-lg md:text-xl italic text-slate-700 mb-8 leading-relaxed relative z-10">
+              <p className="text-lg md:text-xl font-medium text-slate-800 mb-8 leading-relaxed relative z-10">
                 “{t.text}”
               </p>
               <div className="flex items-center gap-4">

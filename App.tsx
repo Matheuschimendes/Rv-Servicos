@@ -12,6 +12,7 @@ import About from './components/About';
 import FAQ from './components/FAQ';
 import FormSection from './components/FormSection';
 import Footer from './components/Footer';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -134,6 +135,7 @@ const App: React.FC = () => {
         {/* <HowItWorks /> */}
         {/* <Testimonials /> */}
         <FormSection /> {/* Dobra 6 */}
+        <FloatingWhatsApp />
         <FAQ />
       </main>
       <Footer /> {/* Dobra 7 */}

@@ -14,6 +14,8 @@ const webImages = {
     'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80',
   innovation:
     'https://images.unsplash.com/photo-1576671081837-49000212a370?auto=format&fit=crop&w=900&q=80',
+  sectionBg:
+    'https://images.unsplash.com/photo-1512678080530-7760d81faba6?auto=format&fit=crop&w=1500&q=80',
 };
 
 const professionalFeatures = [
@@ -39,11 +41,11 @@ const professionalFeatures = [
   },
   {
     title: "Inserção em ambientes de excelência",
-    desc: "Atuação em instituições de alto padrão.",
+    desc: "Atuação em instituições de alto padrão na área da saúde.",
     image: webImages.excellence,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.97a1 1 0 00.95.69h4.173c.969 0 1.371 1.24.588 1.81l-3.377 2.455a1 1 0 00-.364 1.118l1.287 3.97c.3.921-.755 1.688-1.538 1.118l-3.377-2.455a1 1 0 00-1.175 0l-3.377 2.455c-.783.57-1.838-.197-1.538-1.118l1.287-3.97a1 1 0 00-.364-1.118L2.95 9.397c-.783-.57-.38-1.81.588-1.81h4.173a1 1 0 00.95-.69l1.286-3.97z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
       </svg>
     )
   },
@@ -157,6 +159,13 @@ const ProfessionalBenefits: React.FC = () => {
 
   return (
     <section id="beneficios-medicos" className="py-24 md:py-32 bg-brand-dark text-white relative overflow-hidden">
+      <img
+        src={webImages.sectionBg}
+        alt="Fundo de ambiente hospitalar"
+        className="absolute inset-0 h-full w-full object-cover opacity-10"
+        loading="lazy"
+        onError={onImageError(sitePreview)}
+      />
 
       <div className="absolute inset-0 bg-[radial-gradient(900px_420px_at_80%_10%,rgba(255,255,255,0.12),transparent)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(700px_320px_at_15%_85%,rgba(255,255,255,0.08),transparent)]"></div>
@@ -173,8 +182,7 @@ const ProfessionalBenefits: React.FC = () => {
           </h2>
         </div>
 
-        {/* <div ref={carouselRef} className="flex gap-6 md:gap-6 overflow-x-auto pb-6 md:pb-8 w-screen relative px-0 snap-x snap-mandatory "> */}
-        <div ref={carouselRef} className="flex gap-6 md:gap-6 overflow-x-auto pb-6 md:pb-8 w-screen ml-[calc(50%-50vw)] px-6 relative snap-x snap-mandatory scroll-px-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+        <div ref={carouselRef} className="flex gap-6 md:gap-6 overflow-x-auto pb-6 md:pb-8 w-screen relative px-0 snap-x snap-mandatory ">
           {professionalFeatures.map((f, i) => (
             <div
               key={i}
@@ -193,7 +201,7 @@ const ProfessionalBenefits: React.FC = () => {
                   </div>
                 </div>
                 <h3 className="text-lg md:text-2xl font-bold mb-2">{f.title}</h3>
-                <p className="text-white/50 text-sm md:text-base leading-relaxed font-light group-hover:text-white/80 transition-colors">
+                <p className="text-white/70 text-sm md:text-base leading-relaxed group-hover:text-white transition-colors">
                   {f.desc}
                 </p>
                 <div className="mt-5 rounded-2xl overflow-hidden border border-white/20">

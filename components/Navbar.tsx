@@ -87,7 +87,7 @@ const Navbar: React.FC = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-semibold transition-colors ${!isScrolled ? 'text-white/80 hover:text-white' : 'text-slate-600 hover:text-brand-dark'
+                className={`text-lg font-bold transition-colors ${!isScrolled ? 'text-white hover:text-brand-light' : 'text-brand-dark hover:text-brand-light'
                   }`}
               >
                 {item.name}
@@ -95,7 +95,7 @@ const Navbar: React.FC = () => {
             ))}
             <a
               href="#formulario"
-              className="bg-brand-light text-white px-7 py-2.5 rounded-full text-sm font-bold shadow-lg hover:bg-brand-dark transition-all transform hover:scale-105 active:scale-95"
+              className="bg-brand-light text-white px-8 py-3 rounded-full text-base font-bold shadow-lg hover:bg-brand-dark transition-all transform hover:scale-105 active:scale-95"
             >
               SOLICITAR PROPOSTA
             </a>
@@ -160,13 +160,19 @@ const Navbar: React.FC = () => {
             </div>
 
             <div className="flex items-center space-x-6">
-              {['Instagram', 'LinkedIn', 'Facebook'].map((social) => (
+              {[
+                { name: 'Instagram', href: 'https://www.instagram.com/rvservicosmedicos/' },
+                { name: 'LinkedIn', href: '#' },
+                { name: 'Facebook', href: '#' }
+              ].map((social) => (
                 <a
-                  key={social}
-                  href="#"
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white/40 hover:text-brand-light text-[10px] font-bold uppercase tracking-widest transition-colors duration-300"
                 >
-                  {social}
+                  {social.name}
                 </a>
               ))}
             </div>

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import heroLogo from '../assets/images/logos/logo.svg';
+import heroLogo from '../assets/images/logos/log.svg';
 import sitePreview from '../assets/images/site-preview.png';
 
 const webImages = {
@@ -29,10 +29,10 @@ const Hero: React.FC = () => {
 
   return (
     <section id="início" className="relative min-h-[90vh] md:min-h-[110vh] flex items-center overflow-hidden bg-brand-dark pt-32 pb-20 md:pt-40 md:pb-32">
-      <img
+      <img // Fundo da dobra 1
         src={webImages.hospitalBg}
         alt="Ambiente hospitalar moderno"
-        className="absolute inset-0 h-full w-full object-cover opacity-20"
+        className="absolute inset-0 h-full w-full object-cover opacity-50"
         loading="lazy"
         onError={onImageError(sitePreview)}
       />
@@ -45,24 +45,24 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-12 gap-10 md:gap-8 items-center">
           <div className="md:col-span-7 lg:col-span-6 max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 md:mb-8 bg-white/10 border border-white/20 rounded-full backdrop-blur">
-              <span className="text-white/80 text-[9px] md:text-xs font-bold uppercase tracking-widest block">
+            <div className="inline-flex items-center gap-2 px-5 py-2 mb-6 md:mb-8 bg-white/95 border border-white/30 rounded-full shadow-lg">
+              <span className="text-brand-dark text-[10px] md:text-xs font-black uppercase tracking-[0.3em] block">
                 Soluções Médicas Integradas para Instituições de Saúde e Ensino
               </span>
             </div>
 
-            <h1 className="font-display text-xl md:text-4xl lg:text-4xl font-extrabold text-white leading-[1.22] md:leading-[1.12] mb-6 text-balance">
-              Operação médica mais eficiente, sem inflar sua estrutura:
-              <span className="text-brand-light"> equipes completas e gestão de escalas com previsibilidade.</span>
+            <h1 className="font-display text-3xl md:text-5xl lg:text-5xl font-bold text-white leading-[1.2] md:leading-[1.15] mb-6 text-balance">
+              Operação médica mais eficiente, sem <span className="text-brand-light">aumentar</span> sua estrutura: equipes completas e gestão de escalas com previsibilidade.
             </h1>
+            <div className="w-24 h-1.5 bg-brand-light rounded-full mb-8"></div>
 
-            <p className="text-xs md:text-base text-white/85 mb-8 md:mb-10 leading-relaxed font-light max-w-3xl">
-              Somos parceiros estratégicos na terceirização de serviços médicos, atuando da seleção de profissionais à gestão de escalas e cobertura assistencial, para garantir continuidade no atendimento, organização operacional e segurança para a sua instituição.
+            <p className="text-base md:text-xl text-white/70 mb-10 md:mb-12 leading-relaxed max-w-3xl">
+              Somos parceiros estratégicos na terceirização de <strong className="font-semibold text-brand-light">serviços médicos</strong>, atuando da seleção de profissionais à gestão de escalas e cobertura assistencial, para garantir continuidade no atendimento, organização operacional e segurança para a sua instituição.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
               <a
-                href="#formulario"
+                href="https://wa.me/5577998102422?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20contratar%20a%20RV%20Servi%C3%A7os%20M%C3%A9dicos!%20Pode%20me%20ajudar%3F"
                 className="bg-brand-light text-white text-center px-8 md:px-12 py-4 md:py-5 rounded-xl text-base md:text-lg font-black shadow-[0_20px_60px_-25px_rgba(0,0,0,0.65)] hover:bg-white hover:text-brand-dark transition-all active:scale-95"
               >
                 FALAR NO WHATSAPP
@@ -78,13 +78,12 @@ const Hero: React.FC = () => {
           </div>
 
           <div className="hidden md:flex md:col-span-5 lg:col-span-6 justify-end">
-            <div className="relative w-full max-w-[680px] aspect-[5/4]">
+            <div className="relative w-full max-w-[1080px] aspect-[5/4]">
               <div className="absolute -inset-6 rounded-[2.25rem] bg-gradient-to-br from-brand-light/40 via-white/5 to-transparent blur-2xl"></div>
-
-              <img
+              <img // Mapa azul
                 src={heroLogo}
                 alt="Logo RV Serviços Médicos"
-                className="absolute inset-0 h-full w-full object-contain opacity-85 brightness-110 contrast-125 saturate-120 drop-shadow-[0_45px_90px_rgba(0,0,0,0.55)] pointer-events-none select-none"
+                className="absolute inset-0 h-full w-full object-contain opacity-85 brightness-110 contrast-125 saturate-120 drop-shadow-[0_45px_90px_rgba(0,0,0,0.55)] pointer-events-none select-none transform scale-150"
                 fetchPriority="high"
                 decoding="async"
                 onError={onImageError(sitePreview)}

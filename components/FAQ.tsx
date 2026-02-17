@@ -36,6 +36,13 @@ const FAQ: React.FC = () => {
 
   return (
     <section className="py-24 md:py-32 bg-white relative overflow-hidden">
+      <img
+        src={sectionBg}
+        alt="Fundo com equipamentos médicos"
+        className="absolute inset-0 h-full w-full object-cover opacity-[0.07]"
+        loading="lazy"
+        onError={onImageError(sitePreview)}
+      />
 
       <div className="absolute inset-0 bg-white/85"></div>
 
@@ -44,7 +51,7 @@ const FAQ: React.FC = () => {
           <div className="lg:w-1/3">
             <span className="text-brand-dark font-black uppercase text-[10px] md:text-xs tracking-[0.3em] mb-3 md:mb-4 block">Transparência</span>
             <h2 className="font-display text-3xl md:text-5xl font-extrabold text-brand-dark mb-8 leading-tight">Perguntas <br /> Frequentes</h2>
-            <p className="text-slate-500 mb-10 font-light text-base md:text-lg">
+            <p className="text-slate-600 mb-10 text-base md:text-xl">
               Não encontrou o que procurava? Entre em contato direto com nosso time comercial.
             </p>
             <button className="text-brand-dark font-bold flex items-center space-x-3 group text-lg">
@@ -73,7 +80,7 @@ const FAQ: React.FC = () => {
                   </div>
                 </button>
                 <div className={`overflow-hidden transition-all duration-300 ${openIndex === idx ? 'max-h-[300px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <p className="px-8 pb-8 text-slate-500 leading-relaxed text-sm md:text-base font-light">
+                  <p className="px-8 pb-8 text-slate-600 leading-relaxed text-sm md:text-base font-normal">
                     {item.a}
                   </p>
                 </div>
