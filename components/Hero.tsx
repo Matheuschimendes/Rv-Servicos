@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
               </span>
             </div>
 
-            <h1 className="font-display text-3xl md:text-5xl lg:text-5xl font-bold text-white leading-[1.2] md:leading-[1.15] mb-6 text-balance">
+            <h1 className="font-display text-3xl md:text-5xl lg:text-4xl font-bold text-white leading-[1.2] md:leading-[1.15] mb-6 text-balance">
               Operação médica mais eficiente, sem <span className="text-brand-light">aumentar</span> sua estrutura: equipes completas e gestão de escalas com previsibilidade.
             </h1>
             <div className="w-24 h-1.5 bg-brand-light rounded-full mb-8"></div>
