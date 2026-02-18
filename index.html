@@ -1,15 +1,80 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
+    <!-- CHARSET -->
     <meta charset="UTF-8" />
+
+    <!-- RESPONSIVIDADE (SEO + ACESSIBILIDADE) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- TÍTULO SEO -->
+    <title>
+      RV Serviços Médicos | Gestão Médica com Eficiência e Humanização
+    </title>
+
+    <!-- META DESCRIPTION -->
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      name="description"
+      content="A RV Serviços Médicos oferece soluções completas em gestão médica, terceirização e eficiência hospitalar com foco em humanização e excelência no atendimento."
     />
-    <title>RV Serviços Médicos - Eficiência e Humanização na Saúde</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- PALAVRAS-CHAVE -->
+    <meta
+      name="keywords"
+      content="serviços médicos, gestão médica, terceirização médica, hospital, clínica, eficiência hospitalar, humanização na saúde"
+    />
+
+    <!-- AUTOR -->
+    <meta name="author" content="RV Serviços Médicos" />
+
+    <!-- ROBOTS -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- CANONICAL -->
+    <link rel="canonical" href="https://www.rvservicosmedicos.com.br/" />
+
+    <!-- OPEN GRAPH (WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="RV Serviços Médicos | Excelência e Humanização na Saúde"
+    />
+    <meta
+      property="og:description"
+      content="Gestão médica estratégica com foco em eficiência operacional, tecnologia e atendimento humanizado."
+    />
+    <meta property="og:url" content="https://www.rvservicosmedicos.com.br/" />
+    <meta
+      property="og:image"
+      content="https://www.rvservicosmedicos.com.br/og-image.jpg"
+    />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="RV Serviços Médicos" />
+    <meta
+      name="twitter:description"
+      content="Soluções médicas completas com eficiência e humanização."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.rvservicosmedicos.com.br/og-image.jpg"
+    />
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- PERFORMANCE -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- CSS PRINCIPAL -->
+    <link rel="stylesheet" href="/index.css" />
+
+    <!-- TAILWIND CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
       tailwind.config = {
         theme: {
@@ -23,10 +88,10 @@
               },
             },
             spacing: {
-              "section-py": "6rem", // 96px (Mobile)
-              "section-py-md": "8rem", // 128px (Desktop)
-              "header-mb": "4rem", // 64px
-              "header-mb-md": "5rem", // 80px
+              "section-py": "6rem",
+              "section-py-md": "8rem",
+              "header-mb": "4rem",
+              "header-mb-md": "5rem",
             },
             fontFamily: {
               sans: ["ITCAvantGardePro-Md", "sans-serif"],
@@ -40,7 +105,8 @@
         },
       };
     </script>
-    <style></style>
+
+    <!-- IMPORT MAP (React 19) -->
     <script type="importmap">
       {
         "imports": {
@@ -50,11 +116,29 @@
         }
       }
     </script>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="/index.css" />
+
+    <!-- SCHEMA.ORG (SEO AVANÇADO GOOGLE) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MedicalOrganization",
+        "name": "RV Serviços Médicos",
+        "url": "https://www.rvservicosmedicos.com.br",
+        "logo": "https://www.rvservicosmedicos.com.br/logo.png",
+        "description": "Empresa especializada em gestão e prestação de serviços médicos com foco em eficiência e humanização.",
+        "areaServed": "Brasil",
+        "availableService": {
+          "@type": "MedicalBusiness",
+          "name": "Gestão Médica e Hospitalar"
+        }
+      }
+    </script>
   </head>
+
   <body class="text-slate-800 font-sans overflow-x-hidden">
     <div id="root"></div>
+
+    <!-- REACT ENTRY -->
     <script type="module" src="/index.tsx"></script>
   </body>
 </html>
