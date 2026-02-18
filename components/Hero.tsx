@@ -44,22 +44,25 @@ const Hero: React.FC = () => {
       <div className="absolute top-0 right-0 w-1/2 md:w-1/3 h-full bg-brand-light/10 -skew-x-12 translate-x-1/2 md:translate-x-20"></div>
       <div className="absolute inset-0 bg-gradient-to-tr from-black/60 via-brand-dark/65 to-brand-dark/40"></div>
 
+      {/* Sombra escura do lado esquerdo (textos) */}
+      <div className="absolute inset-y-0 left-0 w-full md:w-3/5 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-12 gap-10 md:gap-8 items-center">
           <div className="md:col-span-7 lg:col-span-6 max-w-4xl">
-            <div className="inline-flex items-center gap-2 px-5 py-2 mb-6 md:mb-8 bg-white/95 border border-white/30 rounded-full shadow-lg">
-              <span className="text-brand-dark text-[10px] md:text-xs font-black uppercase tracking-[0.3em] block">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-6 md:mb-8 bg-white/95 border border-white/30 rounded-full shadow-lg">
+              <span className="text-brand-dark text-[11px] md:text-xs font-black uppercase tracking-[0.15em] block">
                 Soluções Médicas Integradas para Instituições de Saúde e Ensino
               </span>
             </div>
+            <h1 className="font-display text-3xl md:text-4xl lg:text-[1.50rem] text-white/100 font-light text-white leading-tight md:leading-tight mb-6 text-balance drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
 
-            <h1 className="font-display text-3xl md:text-5xl lg:text-4xl font-bold text-white leading-[1.2] md:leading-[1.15] mb-6 text-balance">
-              Operação médica mais eficiente, sem <span className="text-brand-light">aumentar</span> sua estrutura: equipes completas e gestão de escalas com previsibilidade.
+              Operação médica mais <span className="text-brand-light">eficiente</span>, sem aumentar sua estrutura: equipes completas e gestão de escalas com <span className="text-brand-light">previsibilidade</span>.
             </h1>
             <div className="w-24 h-1.5 bg-brand-light rounded-full mb-8"></div>
 
-            <p className="text-base md:text-xl text-white/70 mb-10 md:mb-12 leading-relaxed max-w-3xl">
-              Somos parceiros estratégicos na terceirização de <strong className="font-semibold text-brand-light">serviços médicos</strong>, atuando da seleção de profissionais à gestão de escalas e cobertura assistencial, para garantir continuidade no atendimento, organização operacional e segurança para a sua instituição.
+            <p className="text-base md:text-lg text-white/70 mb-10 md:mb-12 leading-relaxed max-w-3xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
+              Somos parceiros estratégicos na <strong className="font-semibold text-brand-light">terceirização de serviços médicos</strong>, atuando da seleção de profissionais à gestão de escalas e cobertura assistencial, para garantir <strong className="font-semibold text-brand-light">continuidade no atendimento</strong>, <strong className="font-semibold text-brand-light">organização operacional</strong> e <strong className="font-semibold text-brand-light">segurança</strong> para a sua instituição.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
@@ -95,7 +98,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 
