@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
         <div className="grid md:grid-cols-12 gap-10 md:gap-8 items-center">
           <div className="md:col-span-7 lg:col-span-6 max-w-4xl">
             <div className="inline-flex items-center gap-2 px-5 py-2.5 mb-6 md:mb-8 bg-white/95 border border-white/30 rounded-full shadow-lg">
-              <span className="text-brand-dark text-[11px] md:text-xs font-black uppercase tracking-[0.15em] block">
+              <span className="text-brand-dark text-[11px] md:text-xs font-black uppercase tracking-[0.10em] block">
                 Soluções Médicas Integradas para Instituições de Saúde e Ensino
               </span>
             </div>
