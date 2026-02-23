@@ -27,7 +27,7 @@ const institutions: Institution[] = [
   { name: 'Prefeitura de Santo Andre - Secretaria de Saude', logoSrc: santoAndreSaude, logoClassName: 'max-h-[4.9rem] md:max-h-[4.9rem]' },
   { name: 'IESP', logoSrc: iesp, logoClassName: 'max-h-[4.9rem] md:max-h-[4.9rem]' },
   { name: 'Secretaria de Saude de Sao Paulo', logoSrc: secretaria, logoClassName: 'max-h-[4.9rem] md:max-h-[4.9rem]' },
-  { name: 'AME', logoSrc: ame, logoClassName: 'max-h-[4.9rem] md:max-h-[4.9rem]' },
+  { name: 'AME', logoSrc: ame, logoClassName: 'max-h-[5.9rem] md:max-h-[5.9rem]' },
 
 ];
 
