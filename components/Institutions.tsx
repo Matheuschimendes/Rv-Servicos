@@ -7,6 +7,9 @@ import fundacaoDoAbc from '../assets/images/instituicoes/abc.svg';
 import uninove from '../assets/images/instituicoes/uninove.svg';
 import santoAndreSaude from '../assets/images/instituicoes/santosaude.svg';
 import iesp from '../assets/images/instituicoes/iesp.svg';
+import secretaria from '../assets/images/instituicoes/secretaria.svg';
+import ame from '../assets/images/instituicoes/ame.svg';
+
 
 type Institution = {
   name: string;
@@ -15,14 +18,17 @@ type Institution = {
 };
 
 const institutions: Institution[] = [
-  { name: 'Hospital da Mulher', logoSrc: hospitalDaMulher, logoClassName: 'max-h-14 md:max-h-16' },
-  { name: 'UNICID', logoSrc: unicid, logoClassName: 'max-h-10 md:max-h-12' },
-  { name: 'SEJUS', logoSrc: sejus },
-  { name: 'UB', logoSrc: ub },
-  { name: 'Fundacao do ABC', logoSrc: fundacaoDoAbc },
-  { name: 'UNINOVE', logoSrc: uninove, logoClassName: 'max-h-9 md:max-h-10' },
-  { name: 'Prefeitura de Santo Andre - Secretaria de Saude', logoSrc: santoAndreSaude },
-  { name: 'IESP', logoSrc: iesp, logoClassName: 'max-h-10 md:max-h-12' },
+  { name: 'Hospital da Mulher', logoSrc: hospitalDaMulher, logoClassName: 'max-h-[5.7rem] md:max-h-[6.1rem]' },
+  { name: 'UNICID', logoSrc: unicid, logoClassName: 'max-h-[4.9rem] md:max-h-[4.9rem]' },
+  { name: 'SEJUS', logoSrc: sejus, logoClassName: 'max-h-[4.9rem] md:max-h-[4.9rem]' },
+  { name: 'UB', logoSrc: ub, logoClassName: 'max-h-[4.9rem] md:max-h-[4.9rem]' },
+  { name: 'Fundacao do ABC', logoSrc: fundacaoDoAbc, logoClassName: 'max-h-[4.9rem] md:max-h-[4.9rem]' },
+  { name: 'UNINOVE', logoSrc: uninove, logoClassName: 'max-h-[4.5rem] md:max-h-[4.6rem]' },
+  { name: 'Prefeitura de Santo Andre - Secretaria de Saude', logoSrc: santoAndreSaude, logoClassName: 'max-h-[4.9rem] md:max-h-[4.9rem]' },
+  { name: 'IESP', logoSrc: iesp, logoClassName: 'max-h-[4.9rem] md:max-h-[4.9rem]' },
+  { name: 'Secretaria de Saude de Sao Paulo', logoSrc: secretaria, logoClassName: 'max-h-[4.9rem] md:max-h-[4.9rem]' },
+  { name: 'AME', logoSrc: ame, logoClassName: 'max-h-[4.9rem] md:max-h-[4.9rem]' },
+
 ];
 
 const getInitials = (name: string) => {
@@ -83,7 +89,7 @@ const Institutions: React.FC = () => {
                   {institutions.map((institution) => (
                     <div
                       key={`${institution.name}-${trackIndex}`}
-                      className="group relative bg-white border border-slate-200/90 rounded-2xl h-[106px] md:h-[122px] w-[calc((100vw-5rem)/2)] md:w-[226px] px-4 md:px-5 shadow-[0_14px_40px_-30px_rgba(15,23,42,0.6)] hover:-translate-y-0.5 hover:shadow-[0_18px_45px_-30px_rgba(15,23,42,0.7)] transition-all duration-300 flex flex-col items-center justify-center shrink-0 overflow-hidden"
+                      className="group relative bg-white border border-slate-200/90 rounded-2xl h-[138px] md:h-[154px] w-[calc((100vw-5rem)/2)] md:w-[226px] px-2 md:px-4 shadow-[0_14px_40px_-30px_rgba(15,23,42,0.6)] hover:-translate-y-0.5 hover:shadow-[0_18px_45px_-30px_rgba(15,23,42,0.7)] transition-all duration-300 flex flex-col items-center justify-center shrink-0 overflow-hidden"
                     >
                       <div className="absolute inset-[1px] rounded-[0.95rem] border border-white/80 pointer-events-none"></div>
                       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-[radial-gradient(120px_60px_at_50%_0%,rgba(25,146,180,0.14),transparent)]"></div>
@@ -96,7 +102,7 @@ const Institutions: React.FC = () => {
                         <img
                           src={institution.logoSrc}
                           alt={`Logo ${institution.name}`}
-                          className={`relative z-10 w-full object-contain contrast-125 saturate-90 ${institution.logoClassName ?? 'max-h-11 md:max-h-12'}`}
+                          className={`relative z-10 w-full object-contain contrast-125 saturate-90 ${institution.logoClassName ?? 'max-h-[4.9rem] md:max-h-[4.9rem]'}`}
                           loading="eager"
                           decoding="async"
                           fetchPriority="high"

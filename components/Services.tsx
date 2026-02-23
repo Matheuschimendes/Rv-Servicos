@@ -184,7 +184,7 @@ const Services: React.FC = () => {
                   Diagnósticos
                 </span>
                 <h3 className="font-display text-2xl md:text-4xl font-extrabold mt-4">
-                  Exames e laudos com padrao de excelencia
+                  Exames e laudos com padrão de excelência
                 </h3>
                 <p className="text-white/70 text-sm md:text-base mt-5 leading-relaxed">
                   Integração de tecnologia e especialistas para laudos rápidos e seguros.
