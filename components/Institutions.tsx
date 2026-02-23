@@ -53,7 +53,7 @@ const Institutions: React.FC = () => {
             Credibilidade
           </span>
           <h2 className="font-display text-2xl md:text-4xl lg:text-[2.8rem] font-extrabold text-brand-dark leading-tight">
-            Instituicoes que confiam em nossos servicos
+            Instituições que confiam em nossos servicos
           </h2>
         </div>
 
