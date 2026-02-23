@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import hospitalDaMulher from '../assets/images/instituicoes/hospital-da-mulher.svg';
+import hospitalDaMulher from '../assets/images/instituicoes/hpmulher.svg';
 import unicid from '../assets/images/instituicoes/unicid.svg';
 import sejus from '../assets/images/instituicoes/sejus.svg';
 import ub from '../assets/images/instituicoes/ub.svg';
-import fundacaoDoAbc from '../assets/images/instituicoes/fundacao-do-abc.svg';
+import fundacaoDoAbc from '../assets/images/instituicoes/abc.svg';
 import uninove from '../assets/images/instituicoes/uninove.svg';
-import santoAndreSaude from '../assets/images/instituicoes/santo-andre-saude.svg';
+import santoAndreSaude from '../assets/images/instituicoes/santosaude.svg';
 import iesp from '../assets/images/instituicoes/iesp.svg';
 
 type Institution = {
