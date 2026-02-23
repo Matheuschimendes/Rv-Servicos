@@ -37,6 +37,20 @@ const getInitials = (name: string) => {
 
 const Institutions: React.FC = () => {
   const [failedLogos, setFailedLogos] = useState<Record<string, boolean>>({});
+  const [retryLogos, setRetryLogos] = useState<Record<string, boolean>>({});
+
+  const handleLogoError = (name: string, logoSrc: string) => (event: React.SyntheticEvent<HTMLImageElement>) => {
+    if (!retryLogos[name]) {
+      setRetryLogos((prev) => ({ ...prev, [name]: true }));
+      event.currentTarget.src = `${logoSrc}#retry`;
+      return;
+    }
+
+    setFailedLogos((prev) => ({
+      ...prev,
+      [name]: true,
+    }));
+  };
 
   return (
     <section id="instituicoes-parceiras" className="py-20 md:py-24 bg-brand-surface relative overflow-hidden">
@@ -83,13 +97,10 @@ const Institutions: React.FC = () => {
                           src={institution.logoSrc}
                           alt={`Logo ${institution.name}`}
                           className={`relative z-10 w-full object-contain contrast-125 saturate-90 ${institution.logoClassName ?? 'max-h-11 md:max-h-12'}`}
-                          loading="lazy"
-                          onError={() =>
-                            setFailedLogos((prev) => ({
-                              ...prev,
-                              [institution.name]: true,
-                            }))
-                          }
+                          loading="eager"
+                          decoding="async"
+                          fetchPriority="high"
+                          onError={handleLogoError(institution.name, institution.logoSrc)}
                         />
                       )}
                     </div>
