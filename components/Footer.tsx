@@ -86,10 +86,9 @@ const Footer: React.FC = () => {
                   </span>
                   <div>
                     <p className="text-[10px] uppercase tracking-widest text-white/40 mb-1">Diretoria Comercial</p>
-                    <span className="font-bold text-base md:text-lg break-all">ricardo@rvsmed.com.br</span>
+                    <span className="font-bold text-base md:text-lg break-all">atendimento@rvsmed.com.br</span>
                   </div>
                 </div>
-
 
                 <a href="https://www.instagram.com/rvservicosmedicos/" className="flex items-start space-x-4" target="_blank" rel="noopener noreferrer">
                   <div className="flex items-start space-x-4">
