@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 // import Stats from './components/Stats';
 import Services from './components/Services';
 import ManagerBenefits from './components/ManagerBenefits';
+import Institutions from './components/Institutions';
 import ProfessionalBenefits from './components/ProfessionalBenefits';
 import About from './components/About';
 // import HowItWorks from './components/HowItWorks';
@@ -129,6 +130,7 @@ const App: React.FC = () => {
 
         {/* Dobras 3 e 4  */}
         <ManagerBenefits /> {/* Dobra 3 */}
+        <Institutions /> {/* Nova sessao */}
         <ProfessionalBenefits /> {/* Dobra 4 */}
 
         <About /> {/* Dobra 5 */}

@@ -124,6 +124,67 @@ body {
 .field-error {
   animation: shakeX 0.25s ease-in-out;
 }
+
+@keyframes institutionsMarquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.institutions-marquee {
+  --institutions-gap: 0.75rem;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0, black 7%, black 93%, transparent 100%);
+}
+
+.institutions-marquee__inner {
+  display: flex;
+  width: max-content;
+  animation: institutionsMarquee 40s linear infinite;
+  will-change: transform;
+}
+
+.institutions-marquee:hover .institutions-marquee__inner {
+  animation-play-state: paused;
+}
+
+.institutions-marquee--secondary .institutions-marquee__inner {
+  animation-direction: reverse;
+  animation-duration: 46s;
+}
+
+.institutions-marquee__track {
+  display: flex;
+  gap: var(--institutions-gap);
+  padding-right: var(--institutions-gap);
+}
+
+@media (max-width: 768px) {
+  .institutions-marquee {
+    --institutions-gap: 0.6rem;
+    mask-image: linear-gradient(to right, transparent 0, black 5%, black 95%, transparent 100%);
+  }
+  .institutions-marquee__inner {
+    animation-duration: 28s;
+  }
+  .institutions-marquee--secondary .institutions-marquee__inner {
+    animation-duration: 33s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .institutions-marquee {
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .institutions-marquee__inner {
+    animation: none !important;
+  }
+}
 /* Helpers de padronização */
 .section-spacing {
   padding-top: 6rem;
