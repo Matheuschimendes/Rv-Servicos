@@ -37,7 +37,6 @@ const getInitials = (name: string) => {
 
 const Institutions: React.FC = () => {
   const [failedLogos, setFailedLogos] = useState<Record<string, boolean>>({});
-  const marqueeRows = [institutions, [...institutions].reverse()];
 
   return (
     <section id="instituicoes-parceiras" className="py-20 md:py-24 bg-brand-surface relative overflow-hidden">
@@ -63,50 +62,42 @@ const Institutions: React.FC = () => {
           <div className="absolute inset-x-8 bottom-0 h-px bg-gradient-to-r from-transparent via-brand-dark/30 to-transparent"></div>
           <div className="absolute inset-0 rounded-[inherit] ring-1 ring-brand-dark/[0.035] pointer-events-none"></div>
 
-          {marqueeRows.map((row, rowIndex) => (
-            <div
-              key={`row-${rowIndex}`}
-              className={`institutions-marquee ${rowIndex === 1 ? 'institutions-marquee--secondary mt-2 md:mt-3' : ''}`}
-              aria-label="Instituicoes parceiras"
-            >
-              <div className="institutions-marquee__inner">
-                {[0, 1].map((trackIndex) => (
-                  <div key={trackIndex} className="institutions-marquee__track" aria-hidden={trackIndex === 1}>
-                    {row.map((institution) => (
-                      <div
-                        key={`${institution.name}-${rowIndex}-${trackIndex}`}
-                        className="group relative bg-white border border-slate-200/90 rounded-2xl h-[106px] md:h-[122px] w-[184px] md:w-[226px] px-4 md:px-5 shadow-[0_14px_40px_-30px_rgba(15,23,42,0.6)] hover:-translate-y-0.5 hover:shadow-[0_18px_45px_-30px_rgba(15,23,42,0.7)] transition-all duration-300 flex flex-col items-center justify-center shrink-0 overflow-hidden"
-                      >
-                        <div className="absolute inset-[1px] rounded-[0.95rem] border border-white/80 pointer-events-none"></div>
-                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-[radial-gradient(120px_60px_at_50%_0%,rgba(25,146,180,0.14),transparent)]"></div>
-                        {failedLogos[institution.name] ? (
-                          <div className="relative z-10 w-full h-full rounded-xl bg-slate-50 text-brand-dark/70 flex flex-col items-center justify-center px-3 py-2 text-center">
-                            <span className="font-black text-base md:text-lg tracking-wider">{getInitials(institution.name)}</span>
-                            <span className="mt-1 text-[10px] md:text-[11px] font-semibold leading-tight">{institution.name}</span>
-                          </div>
-                        ) : (
-                          <>
-                            <img
-                              src={institution.logoSrc}
-                              alt={`Logo ${institution.name}`}
-                              className={`relative z-10 w-full object-contain contrast-125 saturate-90 ${institution.logoClassName ?? 'max-h-11 md:max-h-12'}`}
-                              loading="lazy"
-                              onError={() =>
-                                setFailedLogos((prev) => ({
-                                  ...prev,
-                                  [institution.name]: true,
-                                }))
-                              }
-                            />
-                          </>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
+          <div className="institutions-marquee" aria-label="Instituicoes parceiras">
+            <div className="institutions-marquee__inner">
+              {[0, 1].map((trackIndex) => (
+                <div key={trackIndex} className="institutions-marquee__track" aria-hidden={trackIndex === 1}>
+                  {institutions.map((institution) => (
+                    <div
+                      key={`${institution.name}-${trackIndex}`}
+                      className="group relative bg-white border border-slate-200/90 rounded-2xl h-[106px] md:h-[122px] w-[calc((100vw-5rem)/2)] md:w-[226px] px-4 md:px-5 shadow-[0_14px_40px_-30px_rgba(15,23,42,0.6)] hover:-translate-y-0.5 hover:shadow-[0_18px_45px_-30px_rgba(15,23,42,0.7)] transition-all duration-300 flex flex-col items-center justify-center shrink-0 overflow-hidden"
+                    >
+                      <div className="absolute inset-[1px] rounded-[0.95rem] border border-white/80 pointer-events-none"></div>
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-[radial-gradient(120px_60px_at_50%_0%,rgba(25,146,180,0.14),transparent)]"></div>
+                      {failedLogos[institution.name] ? (
+                        <div className="relative z-10 w-full h-full rounded-xl bg-slate-50 text-brand-dark/70 flex flex-col items-center justify-center px-3 py-2 text-center">
+                          <span className="font-black text-base md:text-lg tracking-wider">{getInitials(institution.name)}</span>
+                          <span className="mt-1 text-[10px] md:text-[11px] font-semibold leading-tight">{institution.name}</span>
+                        </div>
+                      ) : (
+                        <img
+                          src={institution.logoSrc}
+                          alt={`Logo ${institution.name}`}
+                          className={`relative z-10 w-full object-contain contrast-125 saturate-90 ${institution.logoClassName ?? 'max-h-11 md:max-h-12'}`}
+                          loading="lazy"
+                          onError={() =>
+                            setFailedLogos((prev) => ({
+                              ...prev,
+                              [institution.name]: true,
+                            }))
+                          }
+                        />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
 
       </div>

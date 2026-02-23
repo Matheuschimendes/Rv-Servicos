@@ -151,11 +151,6 @@ body {
   animation-play-state: paused;
 }
 
-.institutions-marquee--secondary .institutions-marquee__inner {
-  animation-direction: reverse;
-  animation-duration: 46s;
-}
-
 .institutions-marquee__track {
   display: flex;
   gap: var(--institutions-gap);
@@ -164,14 +159,11 @@ body {
 
 @media (max-width: 768px) {
   .institutions-marquee {
-    --institutions-gap: 0.6rem;
+    --institutions-gap: 0.5rem;
     mask-image: linear-gradient(to right, transparent 0, black 5%, black 95%, transparent 100%);
   }
   .institutions-marquee__inner {
     animation-duration: 28s;
-  }
-  .institutions-marquee--secondary .institutions-marquee__inner {
-    animation-duration: 33s;
   }
 }
 
