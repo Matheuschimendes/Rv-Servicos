@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import hospitalDaMulher from '../assets/images/instituicoes/hospital-da-mulher.png';
-import unicid from '../assets/images/instituicoes/unicid.png';
-import sejus from '../assets/images/instituicoes/sejus.png';
-import ub from '../assets/images/instituicoes/ub.png';
-import fundacaoDoAbc from '../assets/images/instituicoes/fundacao-do-abc.jpeg';
-import uninove from '../assets/images/instituicoes/uninove.png';
-import santoAndreSaude from '../assets/images/instituicoes/santo-andre-saude.png';
-import iesp from '../assets/images/instituicoes/iesp.jpeg';
+import hospitalDaMulher from '../assets/images/instituicoes/hospital-da-mulher.svg';
+import unicid from '../assets/images/instituicoes/unicid.svg';
+import sejus from '../assets/images/instituicoes/sejus.svg';
+import ub from '../assets/images/instituicoes/ub.svg';
+import fundacaoDoAbc from '../assets/images/instituicoes/fundacao-do-abc.svg';
+import uninove from '../assets/images/instituicoes/uninove.svg';
+import santoAndreSaude from '../assets/images/instituicoes/santo-andre-saude.svg';
+import iesp from '../assets/images/instituicoes/iesp.svg';
 
 type Institution = {
   name: string;
@@ -49,9 +49,9 @@ const Institutions: React.FC = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-12">
           <span className="inline-flex items-center justify-center gap-3 text-brand-dark font-black uppercase text-[10px] md:text-xs tracking-[0.32em] mb-4 md:mb-5">
-              <span className="h-px w-10 bg-brand-light/60"></span>
-              Credibilidade
-            </span>
+            <span className="h-px w-10 bg-brand-light/60"></span>
+            Credibilidade
+          </span>
           <h2 className="font-display text-2xl md:text-4xl lg:text-[2.8rem] font-extrabold text-brand-dark leading-tight">
             Instituicoes que confiam em nossos servicos
           </h2>
