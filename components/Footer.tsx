@@ -90,7 +90,7 @@ const Footer: React.FC = () => {
                   </div>
                 </div>
 
-                <a href="https://www.instagram.com/rvservicosmedicos/" className="flex items-start space-x-4" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/rv_servicosmedicos?igsh=anE5eHF1ajl2bTAw" className="flex items-start space-x-4" target="_blank" rel="noopener noreferrer">
                   <div className="flex items-start space-x-4">
                     <span className="text-brand-light">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
