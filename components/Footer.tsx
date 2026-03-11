@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
                     </span>
                     <div>
                       <p className="text-[10px] uppercase tracking-widest text-white/40 mb-1">Instagram</p>
-                      <span className="font-bold text-base md:text-[15px] break-all">rvservicosmedicos</span>
+                      <span className="font-bold text-base md:text-[15px] break-all">rv_servicosmedicos</span>
                     </div>
                   </div>
                 </a>
