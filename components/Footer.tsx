@@ -72,10 +72,12 @@ const Footer: React.FC = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h2l2 5-2 1a12 12 0 005 5l1-2 5 2v2a2 2 0 01-2 2h-1C8.82 18 6 15.18 6 11V10a2 2 0 01-2-2V5z" />
                     </svg>
                   </span>
-                  <div>
-                    <p className="text-[10px] uppercase tracking-widest text-white/40 mb-1">WhatsApp Central</p>
-                    <span className="font-bold text-sm md:text-[15px]">(11) 94111-0402</span>
-                  </div>
+                  <a href="https://wa.me/5511915735662?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20contratar%20a%20RV%20Servi%C3%A7os%20M%C3%A9dicos!%20Pode%20me%20ajudar%3F" target="_blank" rel="noopener noreferrer" className="flex items-start space-x-4">
+                    <div>
+                      <p className="text-[10px] uppercase tracking-widest text-white/40 mb-1">WhatsApp Central</p>
+                      <span className="font-bold text-sm md:text-[15px]">(11) 91573-5662</span>
+                    </div>
+                  </a>
                 </div>
                 <div className="flex items-start space-x-4">
                   <span className="text-brand-light">
